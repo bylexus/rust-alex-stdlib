@@ -54,7 +54,7 @@ pub fn euklid_gcd<T: num::traits::PrimInt>(a: T, b: T) -> T {
     }
 }
 
-/// Smallest Common Multiple
-pub fn scm<T: num::traits::PrimInt>(a: T, b: T) -> T {
+/// Least Common Multiple
+pub fn lcm<T: num::traits::PrimInt>(a: T, b: T) -> T {
     a * b / euklid_gcd(a, b)
 }
