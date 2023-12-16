@@ -6,6 +6,7 @@ use std::{
 
 /// Re-export types
 pub mod types;
+pub mod threads;
 
 pub fn read_lines(file: &str) -> Vec<String> {
     let fh = fs::File::open(file).unwrap();

@@ -127,6 +127,19 @@ impl<T> Coord2dMap<T> {
             0
         }
     }
+
+    pub fn max_x(&self) -> i64 {
+        self.max_x
+    }
+    pub fn min_x(&self) -> i64 {
+        self.min_x
+    }
+    pub fn max_y(&self) -> i64 {
+        self.max_y
+    }
+    pub fn min_y(&self) -> i64 {
+        self.min_y
+    }
 }
 
 #[allow(dead_code)]
