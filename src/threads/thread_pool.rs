@@ -108,12 +108,14 @@ impl ThreadPool {
     pub fn graceful_shutdown(&mut self) {
         drop(self.send_queue.take());
         for w in &mut self.workers {
-            info!("Shutting down worker {}", w.id);
-            let t = w.thread.take();
-            if let Some(t) = t {
+            // let t = w.thread.take();
+            if let Some(t) = w.thread.take() {
+                info!("Shutting down worker {}", w.id);
                 t.join().unwrap();
+            } else {
+                info!("Worker {} already shutdown", w.id);
+
             }
-            // w.thread.take().unwrap().join().expect("Failed to join worker");
         }
     }
 }

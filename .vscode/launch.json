@@ -1,0 +1,84 @@
+{
+	// Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+	// Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+	// Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in library 'alex-lib'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--lib",
+					"--package=alex-lib"
+				],
+				"filter": {
+					"name": "alex-lib",
+					"kind": "lib"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'lib_tests'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--test=lib_tests",
+					"--package=alex-lib"
+				],
+				"filter": {
+					"name": "lib_tests",
+					"kind": "test"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'coord2d_tests'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--test=coord2d_tests",
+					"--package=alex-lib"
+				],
+				"filter": {
+					"name": "coord2d_tests",
+					"kind": "test"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'thread_pool_tests'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--test=thread_pool_tests",
+					"--package=alex-lib"
+				],
+				"filter": {
+					"name": "thread_pool_tests",
+					"kind": "test"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
